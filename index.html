@@ -1,234 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página Principal</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Página Principal</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
 
-    body {
-      background: #f4f6f8;
-      color: #222;
-    }
+            body {
+                background: #f4f6f8;
+                color: #222;
+            }
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 20px 40px;
-    }
+            header {
+                background: #111827;
+                color: white;
+                padding: 20px 40px;
+            }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-    nav h1 {
-      font-size: 24px;
-    }
+            nav h1 {
+                font-size: 24px;
+            }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
 
-    nav a:hover {
-      color: #60a5fa;
-    }
+            nav a:hover {
+                color: #60a5fa;
+            }
 
-    .hero {
-      padding: 60px 40px;
-      text-align: center;
-      background: white;
-    }
+            .hero {
+                padding: 60px 40px;
+                text-align: center;
+                background: white;
+            }
 
-    .hero h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
+            .hero h2 {
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
 
-    .hero p {
-      font-size: 18px;
-      color: #555;
-    }
+            .hero p {
+                font-size: 18px;
+                color: #555;
+            }
 
-    section {
-      padding: 40px;
-    }
+            section {
+                padding: 40px;
+            }
 
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+            section h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
 
-    #loading {
-      text-align: center;
-      font-size: 20px;
-      margin-top: 20px;
-    }
+            #loading {
+                text-align: center;
+                font-size: 20px;
+                margin-top: 20px;
+            }
 
-    #erro {
-      display: none;
-      background: #ffdddd;
-      color: #900;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+            #erro {
+                display: none;
+                background: #ffdddd;
+                color: #900;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
 
-    .posts-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
+            .posts-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 24px;
+            }
 
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s;
-    }
+            .card {
+                background: white;
+                border-radius: 14px;
+                padding: 20px;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+                transition: transform 0.2s;
+            }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+            .card:hover {
+                transform: translateY(-5px);
+            }
 
-    .autor {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
-    }
+            .autor {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 15px;
+            }
 
-    .autor img {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+            .autor img {
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
 
-    .autor-info strong {
-      display: block;
-      font-size: 15px;
-    }
+            .autor-info strong {
+                display: block;
+                font-size: 15px;
+            }
 
-    .autor-info span {
-      font-size: 13px;
-      color: #777;
-    }
+            .autor-info span {
+                font-size: 13px;
+                color: #777;
+            }
 
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-      color: #111;
-    }
+            .card h3 {
+                font-size: 22px;
+                margin-bottom: 10px;
+                color: #111;
+            }
 
-    .card p {
-      color: #555;
-      line-height: 1.5;
-    }
+            .card p {
+                color: #555;
+                line-height: 1.5;
+            }
 
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+            footer {
+                background: #111827;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                margin-top: 40px;
+            }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
+            @media (max-width: 600px) {
+                nav {
+                    flex-direction: column;
+                    gap: 15px;
+                }
 
-      nav ul {
-        flex-direction: column;
-        text-align: center;
-      }
+                nav ul {
+                    flex-direction: column;
+                    text-align: center;
+                }
 
-      .hero h2 {
-        font-size: 30px;
-      }
+                .hero h2 {
+                    font-size: 30px;
+                }
 
-      section {
-        padding: 25px;
-      }
-    }
-  </style>
-</head>
+                section {
+                    padding: 25px;
+                }
+            }
+        </style>
+    </head>
 
-<body>
-  <header>
-    <nav>
-      <h1>Meu Site</h1>
+    <body>
+        <header>
+            <nav>
+                <h1>Meu Site</h1>
 
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#publicacoes">Publicações</a></li>
-      </ul>
-    </nav>
-  </header>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#publicacoes">Publicações</a></li>
+                </ul>
+            </nav>
+        </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <h2>Bem-vindo ao meu site</h2>
-      <p>Esta página consome dados de uma API feita com Node.js e Express.</p>
-    </section>
+        <main>
+            <section class="hero" id="inicio">
+                <h2>Bem-vindo ao meu site</h2>
+                <p>
+                    Esta página consome dados de uma API feita com Node.js e
+                    Express.
+                </p>
+            </section>
 
-    <section id="publicacoes">
-      <h2>Publicações</h2>
+            <section id="publicacoes">
+                <h2>Publicações</h2>
 
-      <div id="erro"></div>
-      <div id="loading">Carregando publicações...</div>
+                <div id="erro"></div>
+                <div id="loading">Carregando publicações...</div>
 
-      <div class="posts-container" id="posts"></div>
-    </section>
-  </main>
+                <div class="posts-container" id="posts"></div>
+            </section>
+        </main>
 
-  <footer>
-    <p>Projeto Backend com Node.js</p>
-  </footer>
+        <footer>
+            <p>Projeto Backend com Node.js</p>
+        </footer>
 
-  <script>
-    const container = document.getElementById("posts");
-    const loading = document.getElementById("loading");
-    const erro = document.getElementById("erro");
+        <script>
+            const container = document.getElementById("posts");
+            const loading = document.getElementById("loading");
+            const erro = document.getElementById("erro");
 
-    async function carregarPublicacoes() {
-      try {
-        const resposta = await fetch("http://localhost:3000/posts");
+            async function carregarPublicacoes() {
+                try {
+                    const resposta = await fetch(
+                        "https://backend-node-dqep.onrender.com/posts",
+                    );
 
-        if (!resposta.ok) {
-          throw new Error("Erro ao buscar publicações");
-        }
+                    if (!resposta.ok) {
+                        throw new Error("Erro ao buscar publicações");
+                    }
 
-        const publicacoes = await resposta.json();
+                    const publicacoes = await resposta.json();
 
-        loading.style.display = "none";
+                    loading.style.display = "none";
 
-        publicacoes.forEach((publicacao) => {
-          const card = document.createElement("article");
-          card.classList.add("card");
+                    publicacoes.forEach((publicacao) => {
+                        const card = document.createElement("article");
+                        card.classList.add("card");
 
-          card.innerHTML = `
+                        card.innerHTML = `
             <div class="autor">
               <img src="${publicacao.fotoAutor}" alt="Foto de ${publicacao.autor}">
               <div class="autor-info">
@@ -241,17 +246,17 @@
             <p>${publicacao.descricao}</p>
           `;
 
-          container.appendChild(card);
-        });
-      } catch (error) {
-        loading.style.display = "none";
-        erro.style.display = "block";
-        erro.textContent = "Erro ao carregar as publicações. Verifique se o backend está rodando.";
-        console.error(error);
-      }
-    }
+                        container.appendChild(card);
+                    });
+                } catch (error) {
+                    loading.style.display = "none";
+                    erro.style.display = "block";
+                    erro.textContent = "Erro ao carregar as publicações.";
+                    console.error(error);
+                }
+            }
 
-    carregarPublicacoes();
-  </script>
-</body>
+            carregarPublicacoes();
+        </script>
+        `</body>
 </html>
